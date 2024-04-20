@@ -3,12 +3,21 @@ public class p17 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
 		
+		System.out.println(solution(a,b,c));
 	
 	}
 	public static int solution(int a, int b, int c) {
 		int answer = 0;
-		
+		if(a == b and b == c) {
+			
+		}
+		else if(a!=b and b!=c) {
+			
+		}
 		return answer;
 	}
 }
