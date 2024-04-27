@@ -15,16 +15,13 @@ public class p6 {
 		for(int a = 0; a<m; a++) {
 			i = sc.nextInt();
 			j = sc.nextInt();
-			l = arr[i];
-			arr[i] = arr[j];
-			arr[j] = l;
-			for(int e: arr)
-				System.out.print(e+" ");
-			System.out.println();
+			l = arr[i-1];
+			arr[i-1] = arr[j-1];
+			arr[j-1] = l;
 		}
 		
-//		for(int e: arr)
-//			System.out.print(e+" ");
+		for(int e: arr)
+			System.out.print(e+" ");
 	}
 
 }
