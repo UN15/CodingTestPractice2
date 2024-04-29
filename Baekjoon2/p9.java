@@ -11,9 +11,14 @@ public class p9 {
 		for(int a = 0; a< n; a++)
 			arr[a] = a+1;
 		for(int a = 0; a<m; a++) {
-			i = sc.nextInt();
-			j = sc.nextInt();
-			for(int b = i; b<=j; b++)
+			i = sc.nextInt()-1;
+			j = sc.nextInt()-1;
+			for(int b = i; b<=(i+j)/2; b++) {
+				int temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+				
 				
 		}
 	}
