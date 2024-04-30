@@ -14,11 +14,13 @@ public class p9 {
 			i = sc.nextInt()-1;
 			j = sc.nextInt()-1;
 			for(int b = i; b<=(i+j)/2; b++) {
-				int temp = arr[i];
-				arr[i] = arr[j];
-				arr[j] = temp;
+				int temp = arr[b];
+				arr[b] = arr[i+j-b];
+				arr[i+j-b] = temp;
 			}
-				
+			for(int e: arr)
+				System.out.print(e+" ");
+			System.out.println();				
 				
 		}
 	}
