@@ -5,16 +5,32 @@ public class p4 {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		char[] arr = sc.next().toCharArray();
-		char[] result = new char[26];
+		int[] result = new int[26];
 		for(int i = 0; i<arr.length; i++) {
-			if(Character.isUpperCase(arr[i])) 
-				arr[i] = Character.toLowerCase(arr[i]);
+			if(arr[i]>=97 && arr[i]<=122)
+				arr[i]-=97;
+			else if(arr[i]>=65 && arr[i]<=90)
+				arr[i]-=65;
 			result[arr[i]]++;
 		}
 		int max = -1;
-		for(int i = 0; i<26; i++)
-			if(max<result[i])
+		int max_num = -1;
+		for(int i = 0; i<26; i++) {
+			if(result[i]>max) {
 				max = result[i];
+				max_num = i;
+			}
+		}
+		
+		int count = 0;
+		for(int e: result) {
+			if(max == e)
+				count++;
+		}
+		if(count == 1)
+			System.out.println((char)(max_num+65));
+		else
+			System.out.println("?");
 	}
 
 }
