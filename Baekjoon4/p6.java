@@ -7,19 +7,25 @@ public class p6 {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int x = Integer.parseInt(br.readLine());
-		int a=1, b=1;
-		int count = 0;
-		while(count<x) {
-			count+=a;
-			a++;
-			
-			if(count%2 == 0) {
-				
-			}
-				
-			
+		int i = 0, n = 0;
+		while(i<x) {
+			n+=1;// 1, 2, 3, 4...
+			i+=n;//1, 3, 6.... 
 		}
 		
+		if(n%2 == 0) {
+			for(int a = 0; a<n; a++) {
+				if(i-a==x)
+					System.out.print((n-a)+"/"+(a+1));
+			}
+			
+		}
+		else {
+			for(int a = 0; a<n; a++) {
+				if(i-a==x)
+					System.out.print((a+1)+"/"+(n-a));
+			}
+		}
 	}
 
 }
