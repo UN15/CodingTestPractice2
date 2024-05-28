@@ -1,0 +1,27 @@
+워너비킹 님의 정렬 알고리즘 7개 정리 참고
+//swap 함수
+public static void swap(int[] arr, int idx1, int idx2){
+  int tmp = arr[idx1];
+  arr[idx1] = arr[idx2];
+  arr[idx2] = tmp;
+}
+====================================================================
+1. 버블 정렬(Bubble Sort)
+  성능 좋지 않음
+  worst: O(n^2)
+  average: O(n^2)
+  best: O(n^2)
+
+2. 선택 정렬(Selection Sort)
+  교환하는 횟수가 O(n)이라 버블 정렬보다는 성능 좋음
+  worst: O(n^2)
+  average: O(n^2)
+  best: O(n^2)
+
+3. 삽입 정렬(Insertion Sort)
+  정렬이 되어있는 경우는 O(n) 정렬되어 있을수록 성능 좋음
+  worst: O(n^2)
+  average: O(n^2)
+  best: O(n)
+
+4. 셸 정렬(Shell Sort)
