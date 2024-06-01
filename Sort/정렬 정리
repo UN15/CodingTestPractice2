@@ -25,3 +25,9 @@ public static void swap(int[] arr, int idx1, int idx2){
   best: O(n)
 
 4. 셸 정렬(Shell Sort)
+
+5. 병합 정렬(Merge Sort)
+
+6. 힙 정렬(Heap Sort)
+
+7. 퀵 정렬(Quick Sort)
