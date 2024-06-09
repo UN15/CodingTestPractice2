@@ -7,12 +7,12 @@ public class p7 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 		int n = Integer.parseInt(br.readLine());
-		int[][] arr = new int[n][n];
+		int[][] arr = new int[n][2];
 		StringTokenizer st;
 		for(int i = 0; i<n; i++) {
 			st = new StringTokenizer(br.readLine());
-			int x = Integer.parseInt(st.nextToken());
-			int y = Integer.parseInt(st.nextToken());
+			arr[i][0] = Integer.parseInt(st.nextToken());
+			arr[i][1] = Integer.parseInt(st.nextToken());
 
 		}
 	}
