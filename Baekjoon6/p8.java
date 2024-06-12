@@ -17,7 +17,11 @@ public class p8 {
 			arr[i][0] = Integer.parseInt(st.nextToken());
 			arr[i][1] = Integer.parseInt(st.nextToken());
 		}
-		
+		Arrays.sort(str, new Comparator<Integer>() {
+//			public int compare(Integer i1, Integer i2) {
+//				
+
+			
 		Arrays.sort(arr, (num1, num2)->{
 			return num1[1] != num2[1] ? num1[1]- num2[1]: num1[0]- num2[0];
 		});
