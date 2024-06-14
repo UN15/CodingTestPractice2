@@ -2,6 +2,23 @@ import java.io.*;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.StringTokenizer;
+
+public static class Member implements Comparable<Member> {
+	int age;
+	String name;
+	
+	public Member(int age, String name) {
+		this.age = age;
+		this.name = name;
+	}
+	
+	public int compareTo(Member m) {
+		return this.age - m.age;
+	}
+	
+	
+	
+}
 public class p10 {
 //10814
 	public static void main(String[] args) throws IOException{
@@ -22,8 +39,3 @@ public class p10 {
 
 }
 
-public static class Member {
-	int age;
-	String name;
-	
-}
