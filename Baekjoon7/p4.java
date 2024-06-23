@@ -3,7 +3,7 @@ import java.util.StringTokenizer;
 import java.util.HashMap;
 import java.util.Map;
 public class p4 {
-	//1620
+	//1620 // 시간 초과 발생
 	public static boolean checkDigit(String str) {
 		boolean flag = true;
 		
@@ -34,15 +34,19 @@ public class p4 {
 		int n = Integer.parseInt(st.nextToken());
 		int m = Integer.parseInt(st.nextToken());
 		HashMap<String, Integer> hmap = new HashMap<>();
+		HashMap<Integer, String> hmap2 = new HashMap<>();
+
 		for(int i = 1; i<=n; i++) {
-			hmap.put(br.readLine(), i);
+			String str = br.readLine();
+			hmap.put(str, i);
+			hmap2.put(i, str);
 		}
 		
 		for(int i = 0; i<m; i++) {
 			String b = br.readLine();
 			boolean check = checkDigit(b);
 			if(check) {
-				sb.append(getKey(hmap,Integer.parseInt(b))+"\n");
+				sb.append(hmap2.get(Integer.parseInt(b))+"\n");
 			}
 			else {
 				sb.append(hmap.get(b)+"\n");
