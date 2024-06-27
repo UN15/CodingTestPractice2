@@ -20,4 +20,6 @@ Baekjoon6=>정렬 완료
 Sort=> 정렬 정리 진행중
 
 
-Baekjoon7=> 집합과 맵 진행 중
+Baekjoon7=> 집합과 맵 완료
+
+Baekjoon8=> 약수, 배수와 소수2 진행중
