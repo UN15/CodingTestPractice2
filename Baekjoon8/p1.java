@@ -13,12 +13,24 @@ public class p1 {
 			st = new StringTokenizer(br.readLine());
 			int a = Integer.parseInt(st.nextToken());
 			int b = Integer.parseInt(st.nextToken());
-
+			int result = 1;
+			int i1 = 2;
 			while(true) {
-				for(int i = 2; i<8)
+				if(b<i1) 
+					break;
+				else {
+					if(a%i1 == 0 && b % i1 == 0) {
+						result*=i1;
+						a = a/i1;
+						b = b/i1;
+					}
+					else {
+						i1++;
+					}
+				}
 			}
-			
-			sb.append();
+			result = result*a*b;
+			sb.append(result+"\n");
 		}
 		
 		System.out.println(sb);
