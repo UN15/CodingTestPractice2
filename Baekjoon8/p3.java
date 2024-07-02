@@ -16,7 +16,21 @@ public class p3 {
 		
 		int a = a1*a2;
 		int b = b1*b2;
-		
+		int i = 2;
+		while(true) {
+			if(i>a && i>b)
+				break;
+			else {
+				if(a%i == 0 && b % i == 0) {
+					a /=i;
+					b/=i;
+				}
+				else {
+					i++;
+				}
+			}
+		}
+		sb.append(a+" "+b);
 		System.out.println(sb);
 	}
 
