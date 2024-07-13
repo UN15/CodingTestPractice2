@@ -12,14 +12,22 @@ public class i4 {
 		int a = Integer.parseInt(st.nextToken());
 		int b = Integer.parseInt(st.nextToken());
 		int d = Integer.parseInt(st.nextToken());
-		
+		int[][] check = new int[n][m];
 		int[][] arr = new int[n][m];
 		for(int i = 0; i<n; i++) {
 			st = new StringTokenizer(br.readLine());
 			for(int j = 0; j<m; j++) {
 				arr[i][j] = Integer.parseInt(st.nextToken());
+				check[i][j] = 0;
 			}
 		}
+		check[a][b] = 1;
+
+		d-=1;
+		if(d<0){
+			d = 3;
+		}
+		if(d == 0)
 
 	}
 }
