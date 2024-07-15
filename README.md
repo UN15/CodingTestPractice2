@@ -24,6 +24,6 @@ Baekjoon7=> 집합과 맵 완료
 
 Baekjoon8=> 약수, 배수와 소수2 진행중
 
-Implement=> 구현 문제 진행중
+Implement=> 구현 문제 진행중(i4 문제 제외 완료)
 
 Greedy => greedy 완료
