@@ -1,15 +1,45 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+//블로그 참고
 public class p4 {
+    public static void main(String[] args) throws Exception{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-	public static void main(String[] args) throws IOException{
-		// TODO Auto-generated method stub
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int n = Integer.parseInt(br.readLine());
-		int[] arr = new int[n];
-		for(int i = 0; i<n; i++) {
-			arr[i] = Integer.parseInt(br.readLine());
-			
-		}
-	}
+        int N = Integer.parseInt(br.readLine());
 
+        int[] streetTree =new int[N];
+
+        for(int i = 0; i < N; i++){
+            streetTree[i]=Integer.parseInt(br.readLine());
+        }
+
+        br.close();
+
+        int gcd = 0; //가로수 간격의 최대 공약수를 저장하는 변수
+
+        for(int i = 0; i < N-1; i++){
+            int distance = streetTree[i+1] - streetTree[i];
+            gcd = findGCD(distance, gcd); //가로수 간격의 최대 공약수
+        }
+
+		//(streetTree[N-1]-streetTree[0])/gcd은 간격의 수니까
+        //가로수의 나무의 개수를 구하려면 간격의 수에서 + 1을 해야한다. 
+        bw.write((streetTree[N-1]-streetTree[0])/gcd+1-(streetTree.length) + "");
+        bw.flush();
+        bw.close();
+
+    }
+
+    //최대 공약수 구하기
+    static int findGCD(int A, int B){
+        while(B != 0){
+            int R = A%B;
+            A = B;
+            B = R;
+        }
+        return A;
+    }
 }
