@@ -22,7 +22,7 @@ Sort=> 정렬 정리 진행중
 
 Baekjoon7=> 집합과 맵 완료
 
-DfsBfs => 진행중
+DfsBfs => 스택과 큐 완료, 진행중
 
 Baekjoon8=> 약수, 배수와 소수2 진행중
 
