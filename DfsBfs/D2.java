@@ -24,8 +24,8 @@ public class D2 {
 
 	}
 	
-	static void check(char[][] arr, int n, int m){
+	static void check(char[][] arr, int x, int y){
 		Queue<Integer> q = new LinkedList<Integer>();
-
+		q.add(x);
 	}
 }
