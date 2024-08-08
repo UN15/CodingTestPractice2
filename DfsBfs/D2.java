@@ -27,5 +27,7 @@ public class D2 {
 	static void check(char[][] arr, int x, int y){
 		Queue<Integer> q = new LinkedList<Integer>();
 		q.add(x);
+		q.add(y);
+		deque
 	}
 }
