@@ -19,7 +19,7 @@ public class D2 {
 				arr[i][j] = str.charAt(j);
 			}
 		}
-		
+		System.out.println(n+m);
 		check(arr, 0, 0);
 
 	}
