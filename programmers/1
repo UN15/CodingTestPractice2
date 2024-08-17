@@ -1,0 +1,51 @@
+class Solution {
+    public int[] solution(int[] num_list, int n) {
+        int[] answer = new int[num_list.length-n+1];
+        int idx = 0;
+        for(int i = n-1; i<num_list.length; i++){
+            answer[idx++] = num_list[i];
+        }
+        return answer;
+    }
+}
+
+class Solution {
+    public int solution(int[] num_list) {
+        int answer = -1;
+        for(int i = 0; i< num_list.length; i++){
+            if(num_list[i]<0){
+                answer = i;
+                break;
+            }
+        }
+        return answer;
+    }
+}
+
+
+class Solution {
+    public int[] solution(int start_num, int end_num) {
+        int[] answer = new int[start_num-end_num+1];
+        int idx = 0;
+        for(int i = start_num; i>=end_num; i--){
+            answer[idx++] = i;
+        }
+        return answer;
+    }
+}
+
+
+class Solution {
+    public int[] solution(int n, int k) {
+        int[] answer = new int[n/k];
+        int idx = 0;
+        int i = k;
+        int a = 2;
+        while(i<=n){
+            answer[idx++] = i;
+            i=k*a;
+            a++;
+        }
+        return answer;
+    }
+}
