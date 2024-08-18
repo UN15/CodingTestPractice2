@@ -1,0 +1,45 @@
+class Solution {
+    public int solution(String my_string, String is_prefix) {
+        int answer = 0;
+        int len = is_prefix.length();
+        if(len>my_string.length())
+           return answer;
+        else{
+            if(is_prefix.equals(my_string.substring(0, len)))
+                answer = 1;
+        }
+        return answer;
+    }
+}
+
+class Solution {
+    public String solution(String my_string, int n) {
+        String answer = my_string.substring(0, n);
+        return answer;
+    }
+}
+
+class Solution {
+    public int solution(String my_string, String is_suffix) {
+        int answer = 0;
+        int len_suffix= is_suffix.length();
+        int len_string = my_string.length();
+        
+        if(len_string<len_suffix)
+            return answer;
+        else{
+            String sub_str = my_string.substring(len_string-len_suffix, len_string);
+            if(sub_str.equals(is_suffix))
+                answer = 1;
+        }
+        return answer;
+    }
+}
+
+class Solution {
+    public String solution(String my_string, int n) {
+        String answer = my_string.substring(my_string.length()-n, my_string.length());
+        return answer;
+    }
+}
+
