@@ -28,3 +28,122 @@ class Solution {
         return answer;
     }
 }
+
+import java.util.Arrays;
+class Solution {
+    public String[] solution(String my_string) {
+        int l = my_string.length();
+        String[] answer = new String[l];
+        for(int i = 0; i<l; i++){
+            answer[i] = my_string.substring(i, l);
+        }
+        Arrays.sort(answer);
+        return answer;
+    }
+}
+
+class Solution {
+    public int[] solution(int[] arr, int k) {
+        int[] answer = new int[arr.length];
+        if(k%2 != 0){
+            for(int i = 0; i<arr.length; i++){
+                answer[i] = arr[i]*k;            
+            }
+        }
+        else{
+            for(int i = 0; i<arr.length; i++){
+                answer[i] = arr[i]+k;            
+            }
+        }
+        return answer;
+    }
+}
+
+class Solution {
+    public String solution(String[] str_list, String ex) {
+        String answer = "";
+        for(int i = 0; i<str_list.length; i++){
+            if(!str_list[i].contains(ex)){
+                answer+=str_list[i];
+            }
+        }
+        return answer;
+    }
+}
+
+class Solution {
+    public int solution(int[] num_list) {
+        int answer = 0;
+        int sum1 = 0;
+        int sum2 = 0;
+        for(int i = 0; i<num_list.length; i++){
+            if(i%2 == 0){
+                sum1+=num_list[i];
+            } 
+            else{
+                sum2+=num_list[i];
+            }
+        }
+        
+        if(sum1>=sum2)
+            answer = sum1;
+        else if(sum1<sum2)
+            answer = sum2;
+    
+        return answer;
+    }
+}
+
+class Solution {
+    public String solution(String n_str) {
+        String answer = "";
+       
+        for(int i = 0; i<n_str.length(); i++){
+            if(n_str.charAt(i)!='0'){
+                answer = n_str.substring(i, n_str.length());
+                break;
+            }
+        }
+        return answer;
+    }
+}
+
+class Solution {
+    public int[] solution(int[] arr, int n) {
+        int l = arr.length;
+        int[] answer = new int[l];
+        if(l%2 != 0){
+            for(int i = 0; i<l; i++){
+                if(i%2 == 0){
+                    answer[i] = n+arr[i];
+                }
+                else
+                    answer[i] = arr[i];
+            }
+        }
+        else{
+            for(int i = 0; i<l; i++){
+                if(i%2 != 0){
+                    answer[i] = n+arr[i];
+                }
+                else
+                    answer[i] = arr[i];
+            }
+        }
+        return answer;
+    }
+}
+
+class Solution {
+    public String solution(int n) {
+        String answer = String.valueOf(n);
+        return answer;
+    }
+}
+or 
+class Solution {
+    public String solution(int n) {
+        String answer = Integer.toString(n);
+        return answer;
+    }
+}
