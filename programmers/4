@@ -1,0 +1,30 @@
+class Solution {
+    public int[] solution(int[] num_list) {
+        int l = num_list.length;
+        int[] answer = new int[l+1] ;
+        int add = 0;
+        if(num_list[l-2]<num_list[l-1]){
+            add = num_list[l-1] - num_list[l-2];
+        }
+        else if(num_list[l-2]>=num_list[l-1]){
+            add = 2*num_list[l-1];
+        }
+        
+        for(int i = 0; i<l; i++){
+            answer[i] = num_list[i];
+        }
+        answer[l] = add;
+        return answer;
+    }
+}
+
+class Solution {
+    public int[] solution(int start_num, int end_num) {
+        int[] answer = new int[end_num-start_num+1];
+        int idx = 0;
+        for(int i = start_num; i<=end_num; i++){
+            answer[idx++] = i;
+        }
+        return answer;
+    }
+}
