@@ -133,7 +133,7 @@ class Solution {
         return answer;
     }
 }
-
+//int to string
 class Solution {
     public String solution(int n) {
         String answer = String.valueOf(n);
@@ -144,6 +144,20 @@ or
 class Solution {
     public String solution(int n) {
         String answer = Integer.toString(n);
+        return answer;
+    }
+}
+//string to int
+class Solution {
+    public int solution(String n_str) {
+        int answer = Integer.valueOf(n_str);
+        return answer;
+    }
+}
+or
+class Solution {
+    public int solution(String n_str) {
+        int answer = Integer.parseInt(n_str);
         return answer;
     }
 }
