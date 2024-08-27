@@ -78,3 +78,53 @@ class Solution {
     }
 }
 
+class Solution {
+    public int solution(String myString, String pat) {
+        int answer = 0;
+        String new_pat = "";
+        for(int i = 0; i<pat.length(); i++){
+            if(pat.charAt(i) == 'A')
+                new_pat+='B';
+            else
+                new_pat+='A';
+        }
+        if(myString.contains(new_pat))
+            answer = 1;
+        return answer;
+    }
+}
+
+class Solution {
+    public String solution(String myString) {
+        String answer = "";
+        for(int i = 0; i<myString.length(); i++){
+            char c = myString.charAt(i);
+            if(c == 'a' || c == 'A')
+                answer+='A';
+            else if(Character.isUpperCase(c))
+                answer+=Character.toLowerCase(c);
+            else
+                answer+=c;
+                
+        }
+        return answer;
+    }
+}
+
+class Solution {
+    public String solution(String my_string, String alp) {
+        String answer = "";
+        for(int i = 0; i<my_string.length(); i++){
+            char c = my_string.charAt(i);
+            if(c == alp.charAt(0)){
+                answer+=Character.toUpperCase(alp.charAt(0));
+            }
+            else{
+                answer+=c;
+            }
+        }
+        return answer;
+    }
+}
+
+
