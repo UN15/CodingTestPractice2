@@ -1,0 +1,80 @@
+import java.util.Arrays;
+class Solution {
+    public int[] solution(int[] num_list) {
+        int[] answer = new int[num_list.length-5];
+        Arrays.sort(num_list);
+        for(int i = 5; i<num_list.length; i++){
+            answer[i-5] = num_list[i];
+        }
+        return answer;
+    }
+}
+//char to int Character.getNumericValue 외우기
+class Solution {
+    public int solution(String num_str) {
+        int answer = 0;
+        for(int i = 0; i<num_str.length(); i++){
+            answer+=Character.getNumericValue(num_str.charAt(i));
+        }
+        return answer;
+    }
+}
+
+class Solution {
+    public int[][] solution(int n) {
+        int[][] answer = new int[n][n];
+        for(int i = 0; i<n; i++){
+            for(int j = 0; j<n; j++){
+                if(i == j)
+                    answer[i][j] = 1;
+                else
+                    answer[i][j] = 0;
+            }
+        }
+        return answer;
+    }
+}
+
+class Solution {
+    public int solution(int a, int b) {
+        int answer = 0;
+        if(a%2 != 0 && b%2 != 0)
+            answer = (int)Math.pow(a,2)+(int)Math.pow(b,2);
+        else if(a%2 == 0 && b%2 == 0)
+            answer = (int)Math.abs(a-b);
+        else
+            answer = 2*(a+b);
+        return answer;
+    
+    }
+}
+
+import java.util.Arrays;
+class Solution {
+    public int[] solution(int[] num_list) {
+        int[] answer = new int[5];
+        Arrays.sort(num_list);
+        for(int i = 0; i<5; i++){
+            answer[i] = num_list[i];
+        }
+        return answer;
+    }
+}
+
+class Solution {
+    public int[] solution(int[] arr) {
+        int sum = 0;
+        for(int i = 0; i<arr.length; i++){
+            sum+=arr[i];
+        }
+        int[] answer = new int[sum];
+        int idx = 0;
+        for(int i = 0; i<arr.length; i++){
+            for(int j = 0; j<arr[i]; j++){
+                answer[idx++] = arr[i];   
+            }
+        }
+        return answer;
+    }
+}
+
