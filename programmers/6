@@ -1,0 +1,21 @@
+class Solution {
+    public String solution(String myString) {
+        String answer = "";
+        for(int i = 0; i<myString.length(); i++){
+            char c = myString.charAt(i);
+            if(c<'l')
+                answer+='l';
+            else
+                answer+=c;
+        }
+        return answer;
+    }
+}
+or  // replaceAll, 정규식인 [a-k] 이용
+class Solution {
+    public String solution(String myString) {
+        String answer = "";
+        answer = myString.replaceAll("[a-k]", "l");
+        return answer;
+    }
+}
