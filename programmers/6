@@ -112,4 +112,45 @@ class Solution {
     }
 }
 
+class Solution {
+    public int[] solution(String myString) {
+        String[] str = myString.split("x", -1);
+        int[] answer = new int[str.length];
 
+        for(int i = 0; i<str.length; i++){
+            answer[i] = str[i].length();
+        }
+        return answer;
+    }
+}
+
+class Solution {
+    public String[] solution(String[] strArr) {
+        String[] answer = new String[strArr.length];
+        for(int i = 0; i<strArr.length; i++){
+            if(i%2 == 0)
+                answer[i] = strArr[i].toLowerCase();
+            else
+                answer[i] = strArr[i].toUpperCase();
+        }
+        return answer;
+    }
+}
+
+class Solution {
+    public String solution(int[] numLog) {
+        String answer = "";
+        for(int i = 1; i<numLog.length; i++){
+            int check = numLog[i]- numLog[i-1];
+            if(check == 1)
+                answer += "w";
+            else if(check == -1)
+                answer += "s";
+            else if(check == 10)
+                answer += "d";
+            else if(check == -10)
+                answer += "a";
+        }
+        return answer;
+    }
+}
