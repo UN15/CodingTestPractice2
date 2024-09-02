@@ -1,12 +1,23 @@
 class Solution {
-    public int solution(int[] arr, int idx) {
-        int answer = -1;
-        for(int i = idx; i<arr.length; i++){
-            if(arr[i] == 1){
-                answer = i;
-                break;
+    public int[] solution(int[] arr, boolean[] flag) {
+        int s = 0;
+        for(int i = 0; i<arr.length; i++){
+            if(flag[i])
+                s+=arr[i]*2;
+            else
+                s-=arr[i];
+        }
+        int[] answer = new int[s];
+        int idx = 0;
+        for(int i = 0; i<arr.length; i++){
+            if(flag[i]){
+                answer[idx]
+            }
+            else{
+                s-=arr[i];
             }
         }
+
         return answer;
     }
 }
