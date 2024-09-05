@@ -25,3 +25,31 @@ class Solution {
         return answer;
     }
 }
+
+class Solution {
+    public String solution(String myString, String pat) {
+        String answer = "";
+        int len_string = myString.length();
+        int len_pat = pat.length();
+        for(int i = len_string-len_pat; i>=0; i--){
+            String str = myString.substring(i, i+len_pat);
+            if(str.equals(pat)){
+                answer = myString.substring(0, i+len_pat);
+                break;
+            }
+        }
+        return answer;
+    }
+}
+
+import java.util.Arrays;
+class Solution {
+    public String solution(String my_string, int[] indices) {
+        String answer = "";
+        Arrays.sort(indices);
+        for(int i = 0; i<indices.length; i++){
+            
+        }
+        return answer;
+    }
+}
