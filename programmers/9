@@ -88,4 +88,37 @@ class Solution {
         return answer;
     }
 }
+
+import java.util.ArrayList;
+class Solution {
+    public int[] solution(String[] intStrs, int k, int s, int l) {
+        ArrayList<Integer> arr = new ArrayList<>();
+        for(int i = 0; i<intStrs.length; i++){
+            int a = Integer.valueOf(intStrs[i].substring(s, s+l));
+            if(a>k)
+                arr.add(a);
+        }
+        int[] answer = new int[arr.size()];
+        for(int i = 0; i<arr.size(); i++){
+            answer[i] = arr.get(i);
+        }
+        return answer;
+    }
+}
+
+class Solution {
+    public int solution(String myString, String pat) {
+        int answer = 0;
+        int mslen = myString.length();
+        int plen = pat.length();
+        for(int i = 0; i<=mslen-plen; i++){
+            String str = myString.substring(i, i+plen);
+            if(str.equals(pat))
+                answer++;
+        }
+        return answer;
+    }
+}
+
+
             
