@@ -1,0 +1,85 @@
+class Solution {
+    public int[] solution(int[] arr) {
+        int len = arr.length;
+        int newlen = 0;
+        int i = 0;
+        
+        while(true){
+            if(len<=(int)Math.pow(2, i)){
+                newlen = (int)Math.pow(2, i);
+                break;
+            }
+            i++;
+        }
+        int[] answer = new int[newlen];
+        for(int j = 0; j<newlen; j++){
+            if(len<=j)
+                answer[j] = 0;
+            else
+                answer[j] = arr[j];
+        }
+
+        return answer;
+    }
+}
+
+=> while 문 수정
+class Solution {
+    public int[] solution(int[] arr) {
+        int len = arr.length;
+        int newlen = 1;
+        int i = 0;
+        
+        while(newlen < len){
+            newlen*=2;
+        }
+        int[] answer = new int[newlen];
+        for(int j = 0; j<newlen; j++){
+            if(len<=j)
+                answer[j] = 0;
+            else
+                answer[j] = arr[j];
+        }
+
+        return answer;
+    }
+}
+
+class Solution {
+    public int solution(int[] num_list) {
+        int answer = 0;
+        for(int i = 0; i<num_list.length; i++){
+            int n = num_list[i];
+            while(n > 1){
+                if(n%2 == 0){
+                    n/=2;
+                }
+                else{
+                    n=(n-1)/2;
+                }
+                answer++;
+            }
+        }
+        return answer;
+    }
+}
+
+class Solution {
+    public boolean solution(boolean x1, boolean x2, boolean x3, boolean x4) {
+        boolean answer = false;
+        boolean a1 = false;
+        boolean a2 = false;
+        if(x1 == true || x2 == true){
+            a1 = true;
+        }
+    
+        if(x3 == true || x4 == true){
+            a2 = true;
+        }
+        
+        if(a1 == true && a2 == true)
+            answer = true;
+        return answer;
+    }
+}
+
