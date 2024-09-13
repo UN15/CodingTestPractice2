@@ -235,3 +235,46 @@ class Solution {
         return answer;
     }
 }
+
+
+import java.util.Arrays;
+import java.util.ArrayList;
+class Solution {
+    public int[] solution(int[] arr, int[] query) {
+        ArrayList<Integer> array = new ArrayList<>();
+        for(int i = 0; i<arr.length; i++){
+            array.add(arr[i]);
+        }
+        
+        for(int i = 0; i<query.length; i++){
+            if(i%2 == 0){
+                for(int j = array.size()-1; j>=query[i]+1; j--){
+                    array.remove(j);
+                }
+            }
+            else{
+                for(int j = query[i]-1; j>=0; j--){
+                    array.remove(j);
+                }
+            }
+        }
+        
+        int[] answer = new int[array.size()];
+        for(int i = 0; i<array.size(); i++){
+            answer[i] = array.get(i);
+        }
+        
+        return answer;
+    }
+}
+
+class Solution {
+    public int solution(int a, int b, int c, int d) {
+        int answer = 0;
+        if(a==b && b==c&& c==d){
+            answer = 1111*a;
+        }
+        else if()
+        return answer;
+    }
+}
