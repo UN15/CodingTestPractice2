@@ -178,3 +178,33 @@ class Solution {
     }
 }
 
+class Solution {
+    public int[] solution(int[] arr, int[][] queries) {
+        for(int i = 0; i<queries.length; i++){
+            int s = queries[i][0];
+            int e = queries[i][1];
+            int k = queries[i][2];
+            
+            for(int j = s; j<=e; j++){
+                if(j%k == 0)
+                    arr[j]++;
+            }
+            
+        }
+        return arr;
+    }
+}
+
+class Solution {
+    public String solution(int q, int r, String code) {
+        String answer = "";
+        char[] carr = code.toCharArray();
+        for(int i = 0; i<carr.length; i++){
+            if(i%q == r){
+                answer+=carr[i];
+            }
+        }
+        return answer;
+    }
+}
+
