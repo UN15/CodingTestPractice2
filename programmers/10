@@ -126,3 +126,55 @@ class Solution {
     }
 }
 
+class Solution {
+    public int[] solution(int[] arr) {
+        int[] answer = {-1};
+        int fidx = -1;
+        int lidx = -1;
+        for(int i = 0; i<arr.length; i++){
+            if(arr[i] == 2){
+                if(fidx != -1){
+                    lidx = i;
+                }
+                else{
+                    fidx = i;
+                    lidx = i;
+                }
+            }
+        }
+        if(fidx != -1){
+            answer = new int[lidx-fidx+1];
+            int idx = 0;
+            for(int i = fidx; i<=lidx; i++){
+                answer[idx++] = arr[i];
+            }
+        }
+        return answer;
+    }
+}
+
+or
+
+import java.util.Arrays;
+class Solution {
+    public int[] solution(int[] arr) {
+        int[] answer = {-1};
+        int fidx = -1;
+        int lidx = -1;
+        for(int i = 0; i<arr.length; i++){
+            if(arr[i] == 2){
+                if(fidx != -1){
+                    lidx = i;
+                }
+                else{
+                    fidx = i;
+                    lidx = i;
+                }
+            }
+        }
+        if(fidx != -1)
+            answer = Arrays.copyOfRange(arr, fidx, lidx+1);
+        return answer;
+    }
+}
+
