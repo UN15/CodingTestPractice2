@@ -1,0 +1,24 @@
+class Solution {
+    public int[] solution(int[] arr) {
+        int len = arr.length;
+        int newlen = 0;
+        int i = 0;
+        
+        while(true){
+            if(len<=(int)Math.pow(2, i)){
+                newlen = (int)Math.pow(2, i);
+                break;
+            }
+            i++;
+        }
+        int[] answer = new int[newlen];
+        for(int j = 0; j<newlen; j++){
+            if(len<=j)
+                answer[j] = 0;
+            else
+                answer[j] = arr[j];
+        }
+
+        return answer;
+    }
+}
