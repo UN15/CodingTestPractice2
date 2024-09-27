@@ -24,7 +24,7 @@ class Solution {
         ArrayList<String> a = str_list.toArray(new String[str_list.size()]);
         int i1 = a.indexOf("l");
         int i2 = a.indexOf("r");
-        if(i1 < i2){
+        if(i1 <= i2){
            answer = Arrays.copyOfRange(str_list, 0, i1);
         }
         else{
@@ -34,14 +34,29 @@ class Solution {
         return answer;
     }
 }
-
+//진행 중 수정 필요
+import java.util.ArrayList;
 class Solution {
-    public int[] solution(int[] num_list, int n) {
-        int[] answer = new int[num_list.length-n+1];
-        int idx = 0;
-        for(int i = n-1; i<num_list.length; i++){
-            answer[idx++] = num_list[i];
+    public int[] solution(int[] arr) {
+        int i = 0;
+        ArrayList<Integer> s = new ArrayList<>();
+        if(s.isEmpty()){
+            s.add(arr[i]);
+            i++;
         }
-        return answer;
+        else{
+            if(s.get(s.size()-1)<arr[i]){
+                s.add(arr[i]);
+                i++;
+            }
+            else{
+                s.remove(s.size()-1);
+            }
+        }
+        int[] stk = new int[s.size()];
+        for(int j = 0; j<s.size(); j++){
+            stk[j] = arr[j];
+        }
+        return stk;
     }
 }
