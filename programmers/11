@@ -45,12 +45,12 @@ class Solution {
             i++;
         }
         else{
-            if(s.get(s.size()-1)<arr[i]){
+            if(s.get(s.size())<arr[i]){
                 s.add(arr[i]);
                 i++;
             }
             else{
-                s.remove(s.size()-1);
+                s.remove(s.size());
             }
         }
         int[] stk = new int[s.size()];
