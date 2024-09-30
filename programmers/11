@@ -34,29 +34,81 @@ class Solution {
         return answer;
     }
 }
-//진행 중 수정 필요
+
 import java.util.ArrayList;
 class Solution {
     public int[] solution(int[] arr) {
         int i = 0;
         ArrayList<Integer> s = new ArrayList<>();
-        if(s.isEmpty()){
-            s.add(arr[i]);
-            i++;
-        }
-        else{
-            if(s.get(s.size())<arr[i]){
+        while(i<arr.length){
+            if(s.isEmpty()){
                 s.add(arr[i]);
                 i++;
             }
             else{
-                s.remove(s.size());
+                if(s.get(s.size()-1)<arr[i]){
+                    s.add(arr[i]);
+                    i++;
+                }
+                else{
+                    s.remove(s.size()-1);
+                }
             }
         }
         int[] stk = new int[s.size()];
         for(int j = 0; j<s.size(); j++){
-            stk[j] = arr[j];
+            stk[j] = s.get(j);
         }
         return stk;
     }
 }
+
+import java.util.ArrayList;
+class Solution {
+    public int[] solution(int[] arr) {
+        int i = 0;
+        ArrayList<Integer> s = new ArrayList<>();
+        while(i<arr.length){
+            if(s.isEmpty()){
+                s.add(arr[i]);
+                i++;
+            }
+            else{
+                if(s.get(s.size()-1) == arr[i]){
+                    s.remove(s.size()-1);
+                    i++;                 
+                }
+                else{
+                   s.add(arr[i]);
+                    i++; 
+                }
+            }
+        }
+       
+        if(s.isEmpty()){
+            return new int[]{-1};
+        }
+        
+        int[] stk = new int[s.size()];
+
+        for(int j = 0; j<s.size(); j++){
+            stk[j] = s.get(j);
+        }
+        return stk;
+    }
+}
+
+//BigInteger=> 정수의 크기에 제한을 두지 않아서 매우 큰 값을 다룰 수 있음
+//정수형으로의 타입 변환이 필요하지 않고 문자열 형태로 숫자를 입력받아 내부적으로 해당 문자열을 정수로 변환하여 처리한다. _꼬마돌님 티스토리 참
+
+import java.math.BigInteger;
+class Solution {
+    public String solution(String a, String b) {
+        BigInteger A = new BigInteger(a);
+        BigInteger B = new BigInteger(b);
+        BigInteger sum = A.add(B);
+        String answer = sum.toString();
+        return answer;
+    }
+}
+
