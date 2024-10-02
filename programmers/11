@@ -136,3 +136,19 @@ class Solution {
         return answer;
     }
 }
+
+class Solution {
+    public String solution(String my_string, int[][] queries) {
+        String answer = "";
+        StringBuilder sb = new StringBuilder(my_string);
+        for(int i = 0; i<queries.length; i++){
+            int s = queries[i][0];
+            int e = queries[i][1];
+            StringBuilder ssb = new StringBuilder(sb.substring(s, e+1));
+            ssb.reverse();
+            sb.replace(s, e+1, s.toString());
+        
+        }
+        return s.toString();
+    }
+}
