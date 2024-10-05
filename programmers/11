@@ -182,3 +182,28 @@ class Solution {
     }
 }
 
+import java.util.ArrayList;
+class Solution {
+    public int[] solution(int[] arr, int k) {
+        int[] answer = new int[k];
+        ArrayList<Integer> a = new ArrayList<>();
+        for(int i = 0; i<arr.length; i++){
+            if(a.size()>=k)
+                break;
+            if(!a.contains(arr[i])){
+                a.add(arr[i]);
+            }
+        }
+        
+        for(int j = 0; j<a.size(); j++)
+                answer[j] = a.get(j);
+        
+        if(a.size()<k){ 
+            for(int l = a.size(); l<k; l++)
+                answer[l] = -1;
+        }
+        
+        return answer;
+    }
+}
+
