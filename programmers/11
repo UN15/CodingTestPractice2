@@ -225,6 +225,35 @@ class Solution {
         return answer;
     }
 }
+
+import java.util.ArrayList;
+class Solution {
+    public int[] solution(int l, int r) {
+        ArrayList<Integer> arr = new ArrayList<>();
+        for(int i = l; i<=r; i++){
+            String str = String.valueOf(i);
+            char[] carr = str.toCharArray();
+            boolean check = true;
+            for(int j = 0; j<carr.length; j++){
+                if(carr[j] != '0' && carr[j] != '5'){
+                    check = false;
+                    break;
+                }
+            }
+            if(check)
+                arr.add(Integer.valueOf(str));
+        }
+        if(arr.size() == 0)
+            return new int[]{-1};
+        int[] answer = new int[arr.size()];
+        for(int i = 0; i<arr.size(); i++){
+            answer[i] = arr.get(i);
+        }
+        return answer;
+    }
+}
+
+
 //수정 필요요
 class Solution {
     public static int select(){
