@@ -140,7 +140,7 @@ class Solution {
 }
 
 or
-//정말 좋은 방법인
+//정말 좋은 방법인듯
 import java.util.*;
  
 class Solution {
@@ -156,3 +156,83 @@ class Solution {
         return Long.parseLong(sb.reverse().toString());
   }
 }
+
+ class Solution {
+     public long solution(long n) {
+         long answer = -1;
+        
+         double sqrt = Math.sqrt(n);
+         if(sqrt%1 == 0){
+             answer = (long) Math.pow(sqrt+1, 2);
+         }
+     
+         return answer;
+     }
+ }
+or
+class Solution {
+    public long solution(long n) {
+        long answer = -1;
+        
+        if(Math.pow((int)Math.sqrt(n), 2) == n)
+            answer = (long)Math.pow((int)Math.sqrt(n)+1, 2);
+     
+        return answer;
+    }
+}
+
+
+class Solution {
+    public boolean solution(int x) {
+        boolean answer = false;
+        String str = String.valueOf(x);
+        int sum = 0;
+        
+        for(int i = 0; i<str.length(); i++)
+            sum+=Integer.parseInt(str.substring(i, i+1));
+        
+        if(x%sum == 0)
+            answer = true;
+        return answer;
+    }
+}
+
+import java.util.Arrays;
+class Solution {
+    public long solution(int a, int b) {
+        long answer = 0;
+        int[] arr = {a,b};
+        Arrays.sort(arr);
+        for(int i = arr[0]; i<=arr[1]; i++)
+            answer+=i;
+        return answer;
+    }
+}
+or
+import java.util.Arrays;
+class Solution {
+    public long solution(int a, int b) {
+        long answer = 0;
+        if(a<b){
+            for(int i = a; i<=b; i++)
+                answer+=i;
+        }
+        else{
+            for(int i = b; i<=a; i++)
+                answer+=i;
+        }
+        return answer;
+    }
+}
+
+import java.util.*;
+class Solution {
+    public String solution(String[] seoul) {
+        String answer = "";
+        ArrayList<String> arr = new ArrayList<>(Arrays.asList(seoul));
+        int idx = arr.indexOf("Kim");
+        answer+="김서방은 "+idx+"에 있다";
+        return answer;
+    }
+}
+
