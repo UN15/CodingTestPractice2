@@ -235,4 +235,156 @@ class Solution {
         return answer;
     }
 }
+or
+import java.util.*;
+class Solution {
+    public String solution(String[] seoul) {
+        String answer = "";
+        int idx = 0;
+        for(int i = 0; i<seoul.length; i++){
+            if(seoul[i].equals("Kim"))
+                idx = i;
+        }
+        answer+="김서방은 "+idx+"에 있다";
+        return answer;
+    }
+}
+
+class Solution {
+    public int solution(int num) {
+        int answer = 0;
+        long n = num;
+        if(n == 1)
+            return 0;
+        
+        while(n!=1){
+            if(answer>=500)
+                return -1;
+            
+            if(n%2 == 0)
+                n/=2;
+            else
+                n = n*3+1;
+            answer++;
+        }
+        
+        return answer;
+    }
+}
+
+class Solution {
+    public int solution(int[] absolutes, boolean[] signs) {
+        int answer = 0;
+        for(int i = 0; i<absolutes.length; i++){
+            if(signs[i]){
+                answer+=absolutes[i];
+            }
+            else{
+                answer+=(absolutes[i]*-1);
+            }
+        }
+        return answer;
+    }
+}
+//복잡함 좋지 못함 간결하게 생각해보
+import java.util.*;
+class Solution {
+    public int solution(int[] numbers) {
+        int answer = 0;
+        ArrayList<Integer> arr = new ArrayList<>();
+        for(int i = 0; i<numbers.length; i++){
+            arr.add(numbers[i]);        
+        }
+        
+        int[] check = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        for(int i = 0; i<check.length; i++){
+            if(!arr.contains(check[i]))
+                answer+=check[i];
+        }
+        return answer;
+    }
+}
+or
+class Solution {
+    public int solution(int[] numbers) {
+        int answer = 0;
+        int[] arr = new int[10];
+        
+        for(int i=0; i<numbers.length; i++) {
+            arr[numbers[i]] = 1;
+        }
+
+        for(int i=0; i<arr.length; i++) {
+            if(arr[i] == 0) 
+                answer += i;
+        }
+        
+        return answer;
+    }
+}
+or // 이거 진짜 기발함
+class Solution {
+    public int solution(int[] numbers) {
+        int sum = 45;
+        for (int i : numbers) {
+            sum -= i;
+        }
+        return sum;
+    }
+}
+
+import java.util.*;
+class Solution {
+    public int[] solution(int[] arr, int divisor) {
+        ArrayList<Integer> a = new ArrayList<>();
+        for(int i = 0; i<arr.length; i++){
+            if(arr[i]%divisor == 0)
+                a.add(arr[i]);
+        }
+       
+        if(a.size() == 0)
+            return new int[]{-1};
+        
+        int[] answer = new int[a.size()];
+        for(int i = 0; i<a.size(); i++)
+            answer[i] = a.get(i);
+        Arrays.sort(answer);
+        return answer;
+    }
+}
+
+import java.util.Arrays;
+class Solution {
+    public int[] solution(int[] arr) {
+        if(arr.length-1 == 0)
+            return new int[]{-1};
+        
+        int[] answer = new int[arr.length-1];
+        int min = arr[0];
+        for(int i = 1; i<arr.length; i++){
+            min = Math.min(min, arr[i]);
+        }        
+        int j = 0;
+        for(int i = 0; i<arr.length; i++){
+            if(min != arr[i])
+                answer[j++] = arr[i];
+        }
+        
+        return answer;
+    }
+}
+
+class Solution {
+    public String solution(String phone_number) {
+        String answer = "";
+        for(int i = 0; i<phone_number.length(); i++){
+            if(i<phone_number.length()-4)
+                answer+="*";
+            else
+                answer+=phone_number.charAt(i);
+        }
+            
+        return answer;
+    }
+}
 
