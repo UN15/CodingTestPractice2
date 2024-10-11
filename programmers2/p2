@@ -53,3 +53,104 @@ class Solution {
     }
 }
 
+import java.util.*;
+class Solution {
+    public String solution(String s) {
+        String answer = "";
+        String[] sarr = s.split("");
+        Arrays.sort(sarr, Collections.reverseOrder());
+        for(String e: sarr)
+            answer+=e;
+        return answer;
+    }
+}
+or
+import java.util.Arrays;
+
+class Solution {
+    public String solution(String s) {
+        char[] arr = s.toCharArray();
+        Arrays.sort(arr);
+        
+        StringBuffer sb = new StringBuffer(new String(arr));
+        String answer = sb.reverse().toString();
+        
+        return answer;
+    }
+}
+
+class Solution {
+    public long solution(int price, int money, int count) {
+        long answer = -1;
+        long sum = 0;
+        for(int i = 1; i<=count; i++){
+            sum+=i*price;
+        }
+        answer = sum-money;
+        if(answer<0)
+            return 0;
+        
+        return answer;
+    }
+}
+
+class Solution {
+    public boolean solution(String s) {
+        boolean answer = true;
+        int len = s.length();
+        for(int i = 0; i<len; i++){
+            if(len == 4 || len == 6){
+                if(Character.isAlphabetic(s.charAt(i)))
+                    return false;
+            }
+            else
+                return false;
+        }
+        return answer;
+    }
+}
+
+class Solution {
+    public boolean solution(String s) {
+        boolean answer = true;
+        int len = s.length();
+        for(int i = 0; i<len; i++){
+            if(len == 4 || len == 6){
+                // if(Character.isAlphabetic(s.charAt(i)))
+                if(s.charAt(i)>=65) //65 이상부터 알파벳임 숫자는 48-57
+                    return false;
+            }
+            else
+                return false;
+        }
+        return answer;
+    }
+}
+
+class Solution {
+    public int[][] solution(int[][] arr1, int[][] arr2) {
+        int[][] answer = new int[arr1.length][arr1[0].length];
+        for(int i = 0; i<arr1.length; i++)
+            for(int j = 0; j<arr1[0].length; j++)
+                answer[i][j] = arr1[i][j]+arr2[i][j];
+        return answer;
+    }
+}
+
+import java.util.Scanner;
+
+class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        for(int i = 0; i<b; i++){
+            for(int j = 0; j<a; j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+            
+    }
+}
+
