@@ -193,3 +193,41 @@ class Solution {
     }
 }
 
+// import java.util.*;
+
+// public class Solution {
+//     public int[] solution(int []arr) {
+//         ArrayList<Integer> a = new ArrayList<>();
+//         a.add(arr[0]);
+//         for(int i = 1; i<arr.length; i++){
+//             if(arr[i] != arr[i-1] ){
+//                 a.add(arr[i]);
+//             }
+//         }
+        
+//         int[] answer = new int[a.size()];
+//         for(int i = 0; i<a.size(); i++)
+//             answer[i] = a.get(i);
+        
+//         return answer;
+//     }
+// }
+or
+import java.util.*;
+
+public class Solution {
+    public int[] solution(int []arr) {
+        Stack<Integer> s = new Stack<>();
+        for(int i : arr){
+            if(s.isEmpty() || !s.peek().equals(i))
+                s.add(i);
+        }
+        
+        int[] answer = new int[s.size()];
+        for(int i = s.size()-1; i>=0; i--){
+            answer[i] = s.pop();
+        }
+        return answer;
+    }
+}
+
