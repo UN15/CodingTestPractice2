@@ -169,3 +169,27 @@ class Solution {
     }
 }
 
+class Solution {
+    public int[] solution(int n, int m) {
+        int[] answer = new int[2];
+        int min = Math.min(n, m);
+        int a = 1;
+        int i = 2;
+        while(i<=min){
+            if(n%i == 0 && m%i == 0){
+                a*=i;
+                n/=i;
+                m/=i;
+            }
+            else{
+                i++;
+            }
+        }
+        answer[0] = a;
+        answer[1] = a*n*m;
+        
+        
+        return answer;
+    }
+}
+
