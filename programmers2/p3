@@ -1,0 +1,35 @@
+import java.util.*;
+class Solution {
+    public int solution(int k, int m, int[] score) {
+        int answer = 0;
+        Arrays.sort(score);
+        for(int i = score.length-1; i-m+1>=0; i-= m){
+            answer+=score[i-m+1]*m;
+        }
+        return answer;
+    }
+}
+
+class Solution {
+    public int solution(int number, int limit, int power) {
+        int answer = 0;
+        int count = 0;
+        int[] arr = new int[number];
+        
+        for(int i = 1; i<=number; i++){
+            count = 0;
+            for(int j = 1; j<=Math.sqrt(i); j++){
+                if(i%j == 0)
+                    count+=2;
+            }
+            arr[i-1] = count;
+        }
+        for(int i = 0; i<number; i++){
+            if(arr[i]>limit)
+                answer+=power;
+            else
+                answer+=arr[i];
+        }
+        return answer;
+    }
+}
