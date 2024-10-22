@@ -36,24 +36,6 @@ class Solution {
     }
 }
 
-
-// import java.util.*;
-// class Solution {
-//     public Stri중
-class Solution {
-    public int[] solution(String[] name, int[] yearning, String[][] photo) {
-        int[] answer = new int[photo.length];
-        
-        for(int i = 0; i<photo.length; i++){
-            for(int j = 0; j<photo[i].length; j++){
-                if(photo)
-            }
-        }
-        return answer;
-    }
-}
-
-
 import java.util.*;
 class Solution {
     public int[] solution(int[] array, int[][] commands) {
@@ -62,6 +44,17 @@ class Solution {
             int[] n_arr = Arrays.copyOfRange(array, commands[i][0]-1, commands[i][1]);
             Arrays.sort(n_arr);
             answer[i] = n_arr[commands[i][2]-1];
+        }
+        return answer;
+    }
+}
+
+class Solution {
+    public int solution(int a, int b, int n) {
+        int answer = 0;
+        while(n>=a){
+            answer+=(n/a)*b;
+            n = (n/a)*b+(n%a);
         }
         return answer;
     }
