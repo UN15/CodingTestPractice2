@@ -6,3 +6,13 @@ HashSet 저장순서 유지 x, 중복값 허용 x
 
 Set<String> set = new HashSet<>();
 set.add("Apple")
+set.contains("Apple); // true return
+set.remove("Apple")
+set.clear() //전체 데이터 삭제
+set.toString() // 데이터 출력 원할 때
+set.isEmpty() //true 또는 false 리턴
+set.size();
+Iterator<String> it = set.iterator();
+while(it.hasNext()){
+  String s = it.next();
+}
