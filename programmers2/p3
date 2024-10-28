@@ -356,4 +356,68 @@ class Solution {
     }
 }
 
+//짱 어려웠음 ㅠ
+// class Solution {
+//     public int[] solution(int N, int[] stages) {
+//         int[] answer = new int[N];
+//         double[] fail = new double[N+1];
+        
+//         for(int i = 1; i<=N; i++){
+//             int pass = 0;
+//             int challenger = 0;
+//             for(int j = 0; j<stages.length; j++){
+//                 if(stages[j]> i)
+//                     pass++;
+//                 else if(stages[j] == i)
+//                     challenger++;  
+//             }
+            
+//             fail[i] = challenger/pass;
+//         }
+//         for(int i = 1; i<=N; i++){
+//         Math.max()
+//         }
+//         return answer;
+//     }
+// }
+import java.util.*;
+class Solution {
+    public int[] solution(int N, int[] stages) {
+        int[] answer = new int[N];
+        HashMap <Integer, Double> map = new HashMap<>();
+        
+        for(int i = 1; i<=N; i++){
+            int pass = 0;
+            int challenger = 0;
+            for(int j = 0; j<stages.length; j++){
+                if(stages[j]> i)
+                    pass++;
+                else if(stages[j] == i)
+                    challenger++;  
+            }
+            if(pass+challenger == 0 || challenger == 0)
+                map.put(i, 0.0);
+            else{
+                map.put(i, (double)challenger/(pass+challenger));
+            }   
+        }
 
+        List<Integer> keySet = new ArrayList<>(map.keySet());
+        keySet.sort(new Comparator<Integer>(){
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return map.get(o2).compareTo(map.get(o1));
+            }
+        });
+        
+        for(int k : keySet){
+            System.out.print("key"+k);
+            System.out.println("value"+map.get(k));
+        }
+        int i = 0;
+        for(int k : keySet){
+            answer[i++] = k;
+        }
+        return answer;
+    }
+}
