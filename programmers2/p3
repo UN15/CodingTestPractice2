@@ -421,3 +421,26 @@ class Solution {
         return answer;
     }
 }
+
+import java.util.Arrays;
+class Solution {
+    public int solution(int[] wallet, int[] bill) {
+        int answer = 0;
+        Arrays.sort(wallet);
+        Arrays.sort(bill);
+        int wmax = wallet[1], wmin = wallet[0], bmax = bill[1], bmin = bill[0];
+        
+        while(bmax> wmax || bmin> wmin){
+            int n = bmax/2;
+            answer++;
+            if(n<bmin){
+                bmax = bmin;
+                bmin = n;
+            }
+            else
+                bmax = n;
+        }
+            
+        return answer;
+    }
+}
