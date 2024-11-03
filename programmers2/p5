@@ -36,3 +36,21 @@ class Solution {
         return answer;
     }
 }
+
+class Solution {
+    public String solution(String video_len, String pos, String op_start, String op_end, String[] commands) {
+        String answer = "";
+        for(int i = 0; i<commands.length; i++){
+            if()
+            switch(commands[i]){
+                case "prev":
+                    break;
+                case "next":
+                    break;
+                    
+            }
+            
+        }
+        return answer;
+    }
+}
