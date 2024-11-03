@@ -1,0 +1,37 @@
+class Solution {
+    public int solution(int[] bandage, int health, int[][] attacks) {
+        int answer = health;
+        int count = 0;
+        int attackTime = attacks[0][0];
+        int attackDamage = attacks[0][1];
+        int a = 0;
+        for(int i = 1; i<=attacks[attacks.length-1][0]; i++){
+            count++;
+            if(count==bandage[0]){
+                count = 0;
+                answer+=bandage[2];
+            }
+            
+            if(attackTime == i){
+                answer-= attackDamage;
+                a++;
+                count = 0;
+                if(a<attacks.length){
+                    attackTime = attacks[a][0];
+                    attackDamage = attacks[a][1];
+                }
+            }
+            else{
+                answer+=bandage[1];
+            }
+            if(answer>health)
+                answer = health;
+            
+            System.out.println(i+": "+ answer+" "+count);
+            if(answer<0)
+                return -1;
+        }
+        
+        return answer;
+    }
+}
