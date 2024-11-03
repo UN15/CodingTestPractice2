@@ -7,11 +7,6 @@ class Solution {
         int a = 0;
         for(int i = 1; i<=attacks[attacks.length-1][0]; i++){
             count++;
-            if(count==bandage[0]){
-                count = 0;
-                answer+=bandage[2];
-            }
-            
             if(attackTime == i){
                 answer-= attackDamage;
                 a++;
@@ -24,11 +19,17 @@ class Solution {
             else{
                 answer+=bandage[1];
             }
+            
+            if(count==bandage[0]){
+                count = 0;
+                answer+=bandage[2];
+            }
+            
             if(answer>health)
                 answer = health;
             
             System.out.println(i+": "+ answer+" "+count);
-            if(answer<0)
+            if(answer<=0)
                 return -1;
         }
         
