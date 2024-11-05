@@ -117,3 +117,28 @@ class Solution {
         return min+":"+sec;
     }
 }
+
+class Solution {
+    public int solution(String[] friends, String[] gifts) {
+        int answer = 0;
+        int[][] arr = new int[friends.length][friends.length];
+        int[] result = new int[friends.length];
+        int a, b;
+
+        for(int i = 0; i<gifts.length; i++){
+            String s = gifts[i].split(" ");
+            for(int j = 0; j<friends.length; j++){
+                if(s[0].equals(friends[j]))
+                    a = j;
+                else if(s[1].equals(friends[j]))
+                    b = j;
+            }
+            arr[a][b]+=1;        
+        }
+        for(int i = 0; i<friends.length; i++){
+            
+        }
+
+        return answer;
+    }
+}
