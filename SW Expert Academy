@@ -1,0 +1,80 @@
+import java.io.FileInputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+ 
+class Solution
+{
+    public static void main(String args[]) throws Exception
+    {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] s = br.readLine().split(" ");
+        System.out.println(Integer.parseInt(s[0])-Integer.parseInt(s[1])+1);
+    }
+}
+
+import java.util.Scanner;
+import java.io.FileInputStream;
+class Solution
+{
+	public static void main(String args[]) throws Exception
+	{
+		Scanner sc = new Scanner(System.in);
+		String str =sc.next();
+		int sum = 0;
+		for(int i = 0; i <str.length(); i++)
+			sum+= Integer.parseInt(str.substring(i, i+1));
+        
+        System.out.println(sum);
+	}
+}
+
+import java.io.*;
+class Solution
+{
+	public static void main(String args[]) throws Exception
+	{
+		
+		BufferedReader  br = new BufferedReader(new InputStreamReader(System.in));
+        String[] s = br.readLine().split(" ");
+       
+        //가위
+		if(s[0].equals("1")) {
+            if(s[1].equals("2"))
+               System.out.println("B");
+            else if(s[1].equals("3"))
+               System.out.println("A");
+   		}
+        //바위
+        else if(s[0].equals("2")){
+            if(s[1].equals("1"))
+               System.out.println("A");
+            else if(s[1].equals("3"))
+               System.out.println("B");
+        }
+        //보
+        else if(s[0].equals("3")){
+            if(s[1].equals("1"))
+               System.out.println("B");
+            else if(s[1].equals("2"))
+               System.out.println("A");
+        }
+	}
+}
+or
+import java.io.*;
+class Solution
+{
+	public static void main(String args[]) throws Exception
+	{
+		
+		BufferedReader  br = new BufferedReader(new InputStreamReader(System.in));
+        String[] s = br.readLine().split(" ");
+       int a = Integer.parseInt(s[0]);
+       int b = Integer.parseInt(s[1]);
+        if(a-b == 1 || a-b ==-2)
+            System.out.println("A");
+        else
+            System.out.println("B");
+        
+	}
+}
