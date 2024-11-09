@@ -264,4 +264,49 @@ class Solution
 	}
 }
 
+import java.util.Scanner;
+import java.io.FileInputStream;
+
+class Solution
+{
+	public static void main(String args[]) throws Exception
+	{
+		Scanner sc = new Scanner(System.in);
+		int T=sc.nextInt();
+        int sum = 0;
+		for(int i = 1; i <= T; i++)
+		{
+            for(int j = 0; j<10; j++){
+				int a = sc.nextInt();
+            	if(a%2 !=0)
+                	sum+=a;
+            }
+            System.out.println("#"+i+" "+sum);
+            sum = 0;
+		}
+	}
+}
+or
+//이게 더 빠르고 메모리도 덜 
+import java.io.*;
+class Solution
+{
+	public static void main(String args[]) throws Exception
+	{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine());
+        int sum = 0;
+
+        for(int i = 1; i<=T; i++){
+            String s[] = br.readLine().split(" ");
+            for(int j = 0; j<10; j++){
+                if(Integer.parseInt(s[j])%2 != 0)
+                    sum+=Integer.parseInt(s[j]);
+            }
+            System.out.println("#"+i+" "+sum);
+            sum = 0;
+        }
+		
+	}
+}
 
