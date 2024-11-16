@@ -574,3 +574,47 @@ class Solution
 		}
 	}
 }
+===================================================================================================
+LV 3.
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+class Solution
+{
+	public static void main(String args[]) throws Exception
+	{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int T = Integer.parseInt(br.readLine());
+		for(int i = 1; i<=T; i++) {
+			String s = br.readLine();
+			Map<String, Integer> m = new HashMap<String,Integer>();
+			for(int j = 0; j<s.length(); j++) {
+				String ss = s.substring(j, j+1);
+				if(m.containsKey(ss))
+					m.put(ss, m.get(ss)+1);
+				else
+					m.put(ss, 1);
+			}
+			
+			ArrayList<String> arr = new ArrayList<>();
+			for(String key: m.keySet()){
+				int v = m.get(key);
+				if(v%2 != 0)
+					arr.add(key);
+			}
+			
+			if(arr.isEmpty())
+				System.out.println("#"+i+" Good");
+			else {
+				Collections.sort(arr);
+				System.out.print("#"+i+" ");
+				for(String e: arr)
+					System.out.print(e);
+				System.out.println();
+			}
+				
+		}
+	}
+}
