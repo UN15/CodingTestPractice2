@@ -805,3 +805,206 @@ public class Practice6 {
 	}
 
 }
+
+import java.io.*;
+public class Practice7 {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int TC = Integer.parseInt(br.readLine());
+		
+		for(int i = 1; i<=TC; i++) {
+			char[] carr = br.readLine().toCharArray();
+			char check = 'a';
+			int answer = 0;
+			for(int j = 0; j<carr.length; j++) {
+				if(carr[j] == check)
+					answer++;
+				else
+					break;
+				check++;
+			}
+			System.out.println("#"+i+" "+ answer);
+				
+		}
+	}
+
+}
+
+import java.util.Scanner;
+import java.math.BigInteger;
+class Solution
+{
+	public static void main(String args[]) throws Exception
+	{
+	
+		Scanner sc = new Scanner(System.in);
+		int T=sc.nextInt();
+		
+		for(int i = 1; i <= T; i++)
+		{
+			BigInteger b1 = new BigInteger(sc.next());
+			BigInteger b2 = new BigInteger(sc.next());
+            System.out.println("#"+i+" "+b1.add(b2));
+		}
+	}
+}
+
+import java.io.*;
+public class Practice8 {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int T = Integer.parseInt(br.readLine());
+		for(int i = 1; i<=T; i++) {
+			String[] t = br.readLine().split(":");
+			int H = Integer.parseInt(t[0]);
+			int M = Integer.parseInt(t[1]);
+			int S = Integer.parseInt(t[2]);
+			int total = H*60*60+M*60+S;
+			String[] t2 = br.readLine().split(":");
+			int H2 = Integer.parseInt(t2[0]);
+			int M2 = Integer.parseInt(t2[1]);
+			int S2 = Integer.parseInt(t2[2]);
+			int total2 = H2*60*60+M2*60+S2;
+
+			if(total>total2)
+				total2+=24*60*60;
+			
+			int result = total2-total;
+			int rs = result%60;
+			int rm = (result/60)%60;
+			int rh = result/60/60;
+			String r = "";
+			if(rh<10)
+				r="0"+rh+":";
+			else
+				r = rh+":";
+			if(rm<10)
+				r= r+"0"+rm+":";
+			else
+				r = r+rm+":";
+			if(rs<10)
+				r = r+"0"+rs;
+			else
+				r = r+rs;
+			System.out.println("#"+i+" "+ r);
+		}
+
+	}
+
+}
+import java.util.Scanner;
+import java.io.FileInputStream;
+
+class Solution
+{
+	public static void main(String args[]) throws Exception
+	{
+		
+		
+		for(int i = 2; i <= Math.pow(10, 6); i++)
+		{
+            boolean flag = false;
+			for(int j = 2; j<=Math.sqrt(i); j++){
+                if(i%j == 0){
+                   flag = true;
+                    break;
+                }
+            }
+            if(flag == false)
+                System.out.print(i+" ");
+		}
+	}
+}
+
+import java.io.*;
+public class Practice9 {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int tc = Integer.parseInt(br.readLine());
+		for(int i = 1; i<=tc; i++) {
+			String a = br.readLine();
+			int[] s = new int[13];
+			int[] d = new int[13];
+			int[] h = new int[13];
+			int[] c = new int[13];
+			boolean check = true;
+			for(int idx = 0; idx<a.length(); idx+=3) {
+				String card = a.substring(idx, idx+1);
+				int num = Integer.parseInt(a.substring(idx+1,idx+3));
+				
+				if(card.equals("S")) {
+					if(s[num-1] == 0)
+						s[num-1] = 1;
+					else {
+						check = false;
+						break;
+					}
+						
+				}
+				else if(card.equals("D")) {
+					if(d[num-1] == 0)
+						d[num-1] = 1;
+					else {
+						check = false;
+						break;
+					}
+				}
+				else if(card.equals("H")) {
+					if(h[num-1] == 0)
+						h[num-1] = 1;
+					else {
+						check = false;
+						break;
+					}
+					
+				}
+				else if(card.equals("C")) {
+					if(c[num-1] == 0)
+						c[num-1] = 1;
+					else {
+						check = false;
+						break;
+					}
+				}
+					
+			}
+			
+			if(check == false)
+				System.out.println("#"+i+" ERROR");
+			else {
+				int count = 0;
+				for(int e: s) {
+					if(e == 0)
+						count++;
+				}
+				
+				int count2 = 0;
+				for(int e2: d) {
+					if(e2 == 0)
+						count2++;
+				}
+					
+				int count3 = 0;
+				for(int e3: h) {
+					if(e3 == 0)
+						count3++;
+				}
+				
+				int count4 = 0;
+				for(int e4: c) {
+					if(e4 == 0)
+						count4++;
+				}
+				
+				System.out.println("#"+i+" "+count+" "+ count2+" "+ count3+" "+count4);
+			}
+		}
+	}
+
+}
