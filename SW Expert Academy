@@ -618,3 +618,63 @@ class Solution
 		}
 	}
 }
+
+import java.io.*;
+class Solution
+{
+	public static void main(String args[]) throws Exception
+	{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int T = Integer.parseInt(br.readLine());
+		
+		for(int j = 1; j<=T; j++) {
+            int N = Integer.parseInt(br.readLine());
+			int[] arr = new int[N];
+			int sum = 0;
+			int answer = 0;
+			for(int i = 0; i<N; i++) {
+				int a = Integer.parseInt(br.readLine());
+				arr[i] = a;
+				sum+=a;
+			}
+			for(int k = 0; k<N; k++) {
+				if(arr[k]>(sum/N))
+					answer+= arr[k]-(sum/N);
+			}
+			System.out.println("#"+j+" "+answer);
+		}
+	}
+}
+
+import java.util.*;
+import java.io.*;
+class Solution
+{
+	public static void main(String args[]) throws Exception
+	{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int T = Integer.parseInt(br.readLine());
+		StringTokenizer st;
+		for(int i = 1; i<=T; i++) {
+			int[] arr = new int[7];
+			Set <Integer> sum = new HashSet<Integer>();
+
+			st = new StringTokenizer(br.readLine());
+			for(int a = 0; a<7; a++)
+				arr[a] = Integer.parseInt(st.nextToken());
+			
+			for(int j = 0; j<5; j++) {
+				for(int k = j+1; k<6; k++) {
+					for(int q = k+1; q<7; q++) {
+						sum.add(arr[j]+arr[k]+arr[q]);
+					}
+				}
+			}
+			
+			List<Integer> s = new ArrayList<>(sum);
+			Collections.sort(s, Collections.reverseOrder());
+			System.out.println("#"+i+" "+s.get(4));
+		}
+	}
+}
+
