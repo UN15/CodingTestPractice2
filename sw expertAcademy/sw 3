@@ -137,3 +137,23 @@ class Solution
 		}
 	}
 }
+
+import java.io.*;
+class Solution
+{
+	public static void main(String args[]) throws Exception
+	{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int TC=Integer.parseInt(br.readLine());
+	
+		for(int i= 1; i <= TC; i++){
+			String[] s = br.readLine().split(" ");
+			int A = Integer.parseInt(s[0]);
+            int B = Integer.parseInt(s[1]);
+			if(A>=10 || B>=10)
+                System.out.println("#"+i+" "+-1);
+            else
+                System.out.println("#"+i+" "+A*B);
+		}
+	}
+}
