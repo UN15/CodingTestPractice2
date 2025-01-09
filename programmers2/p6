@@ -419,3 +419,49 @@ class Solution {
         return answer;
     }
 }
+
+import java.util.*;
+class Solution {
+    public int solution(int cacheSize, String[] cities) {
+        int answer = 0;
+        ArrayList<String> cache = new ArrayList<>();
+        for(int i = 0; i<cities.length; i++){
+            if(cacheSize == 0){
+                answer = cities.length*5;
+                break;
+            }
+            else{
+                if(cache.isEmpty()){
+                    answer+=5;
+                    cache.add(cities[i].toLowerCase());
+                }
+                else if(cache.size()<cacheSize){
+                    if(cache.contains(cities[i].toLowerCase())){
+                        cache.remove(cities[i].toLowerCase());
+                        cache.add(cities[i].toLowerCase());
+                        answer+=1;
+                    }
+                    else{
+                        answer+=5;
+                        cache.add(cities[i].toLowerCase());
+                    }         
+                }
+                else if(cache.size()==cacheSize){
+                    if(cache.contains(cities[i].toLowerCase())){
+                        cache.remove(cities[i].toLowerCase());
+                        cache.add(cities[i].toLowerCase());
+                        answer+=1;
+                    }
+                    else{
+                        cache.remove(0);
+                        cache.add(cities[i].toLowerCase());
+                        answer+=5;
+                    }
+                }
+            }
+        }
+       
+
+        return answer;
+    }
+}
