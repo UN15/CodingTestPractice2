@@ -373,3 +373,49 @@ class Solution {
         return answer;
     }
 }
+
+class Solution {
+    public int[] solution(int n, long left, long right) {
+        int[] answer = new int[(int)right-(int)left+1];
+        int j = 0;
+        for(long i = left; i<=right; i++){
+            long row = i/n;
+            long column = i%n;
+            answer[j] = Math.max((int)row, (int)column)+1;
+            j++;
+        }
+        return answer;
+    }
+}
+
+class Solution {
+    public int[][] solution(int[][] arr1, int[][] arr2) {
+        int[][] answer = new int[arr1.length][arr2[0].length];
+        for(int i = 0; i<arr1.length; i++){
+            for(int j = 0; j<arr2[0].length; j++){
+                int sum = 0;
+                for(int k = 0; k < arr2.length; k++) {
+			        sum += arr1[i][k] * arr2[k][j];
+                }
+			 answer[i][j] = sum;
+            }        
+        }
+        return answer;
+    }
+}
+
+import java.util.*;
+class Solution {
+    public int solution(int[] citations) {
+        int answer = 0;
+        Arrays.sort(citations);
+        int n = citations.length;
+        for(int i = 0; i<n; i++){
+            if(citations[i] >= (n-i)){
+                answer = n-i; 
+                break;
+            }
+        }
+        return answer;
+    }
+}
